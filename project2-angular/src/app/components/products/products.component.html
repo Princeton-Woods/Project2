@@ -1,30 +1,49 @@
-<app-navbar></app-navbar>
+<div class="body">
+    <app-navbar></app-navbar>
 <br>
-<div class="container">
-    <h1>Books</h1>
+<div class="container-fluid">
+    
+    <div class="row">
 
-    <table class="table table-bordered">
-        <thead class="thead-dart">
-            <tr>
-                <th></th>
-                <th>Title</th>
-                <th>Author</th>
-                <th>ISBN</th>
-                <th>Price</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let book of books">
-                <td><img src="{{ book.image }}" class="img-fluid img-thumbnail" alt=""></td>
-                <td>{{ book.title }}</td>
-                <td>{{ book.author }}</td>
-                <td>{{ book.ISBN }}</td>
+        <div class="col-3">
+            <br>
+            <br>
+            <br>
+            <app-sidebar></app-sidebar>
 
-                <td>{{ book.price.displayValue | currency:'EUR' }} | {{ book.price.displayValue * 1.18 | currency:'USD' }}</td>
-                <td>
-                    <button class="btn btn-secondary" (click)="onButtonClick(book)">Learn More</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+        </div>
+
+        <div class="col-6">
+            <h1 class="text-white font-weight-bold bigger-text">Books</h1>
+
+            <table class="table table-dark table-bordered" id="booksTable">
+
+                <thead class="thead-dart">
+                    <tr>
+                        <th></th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>ISBN</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of books">
+                        <td><img src="{{ book.image }}" class="img-fluid img-thumbnail" alt=""></td>
+                        <td id="{{ book.title }}">{{ book.title }}</td>
+                        <td id="{{ book.author }}">{{ book.author }}</td>
+                        <td id="{{ book.ISBN }}">{{ book.ISBN }}</td>
+        
+                        <td>{{ book.price.displayValue | currency:'EUR' }} | {{ book.price.displayValue * 1.18 | currency:'USD' }}</td>
+                        <td>
+                            <button class="btn btn-secondary" (click)="onButtonClick(book)">Learn More</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+       
+    </div>
+</div>
+
 </div>

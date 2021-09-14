@@ -18,6 +18,7 @@ import { LogoutComponent } from './components/logout/logout.component';
 import { ProductsComponent } from './components/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { BookDetailComponent } from './components/book-detail/book-detail.compon
     LogoutComponent,
     ProductsComponent,
     PageNotFoundComponent,
-    BookDetailComponent
+    BookDetailComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
