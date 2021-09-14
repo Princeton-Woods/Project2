@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogoutComponent } from './components/logout/logout.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { ReadlistComponent } from './components/readlist/readlist.component';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     LoginComponent,
     RegisterComponent,
-    LogoutComponent
+    LogoutComponent,
+    ReadlistComponent,
   ],
   imports: [
     BrowserModule,
