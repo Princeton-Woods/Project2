@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from 'src/app/services/books.service';
 import { DataService } from 'src/app/services/data.service';
 
+
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
@@ -16,8 +17,6 @@ export class ProductsComponent implements OnInit {
   public summary: any;
   public image: any;
   public books: any;
-
- 
 
 
   constructor(private bookService: BooksService, private router: Router) { 
