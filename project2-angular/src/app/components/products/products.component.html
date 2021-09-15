@@ -1,4 +1,6 @@
+
 <div class="body">
+    
     <app-navbar></app-navbar>
 <br>
 <div class="container-fluid">
@@ -31,10 +33,10 @@
                     <tr>
                         <th><h1 class="text-white font-weight-bold bigger-text">Books</h1>
                         </th>
-                        <th>Title</th>
-                        <th>Author</th>
-                        <th>ISBN</th>
-                        <th>Price</th>
+                        <th scope="col" [appSort]="books" data-order="desc" data-name="title">Title</th>
+                        <th scope="col" [appSort]="books" data-order="desc" data-name="author">Author</th>
+                        <th scope="col" [appSort]="books" data-order="desc" data-name="isbn">ISBN</th>
+                        <th scope="col" [appSort]="books" data-order="desc" data-name="price">Price</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -58,4 +60,32 @@
 
 </div>
 
+<!-- <script>
+    function sortTable() {
+        var table, rows, switching, i, x, y, shouldSwitch;
+          table = document.getElementById("booksTable");
+          switching = true;
 
+          while (switching) {
+             switching = false;
+             rows = table.rows;
+
+             for (i = 1; i < (rows.length - 1); i++) {
+                 shouldSwitch = false;
+
+
+                  x = rows[i].getElementsByTagName("TD")[0];
+                  y = rows[i + 1].getElementsByTagName("TD")[0];
+
+                  if (x > y) {
+                      shouldSwitch = true;
+                      break;
+                  }
+             }
+             if (shouldSwitch) {
+                 rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                  switching = true;
+             }
+          }
+    }
+</script> -->
