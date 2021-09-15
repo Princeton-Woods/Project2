@@ -3,43 +3,26 @@
     <section class="row-section">
         <div class="container">
             <div class="row">
-                <h2 class="text-center"><span>Reading Listing</span>For (username placeholder)</h2>
+                <h2 class="text-center"><span>Reading Listing</span> For {{ readlists[0].user.firstName }} {{ readlists[0].user.lastName }}</h2>
             </div>
             <div class="col-md-10 offset-md-1 row-block">
                 <ul id="sortable">
-                    <li>
+                    <li *ngFor="let readlist of readlists">
                         <div class="media">
                             <div class="media-left align-self-center">
-                                <img class="rounded-circle" src="" alt="Book cover image">
+                                <img src="{{ readlist.book.image }}" alt="Book cover image">
                             </div>
                             <div class="media-body">
-                                <h4>Book title</h4>
-                                <p>Book description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
+                                <h4>{{ readlist.book.title }}</h4>
+                                <h6>Author: {{ readlist.book.author }}</h6>
+                                <p>{{ readlist.book.summary }}</p>
                             </div>
                             <div class="media-right align-self-center">
-                                <a href="#">Remove</a>
+                                <button (click)="removeBook(readlist)" id="remove">Remove</button>
+                                <!-- <button (click)="addBook" id="add">add test</button> -->
                             </div>
                         </div>
                     </li>
-
-
-                    <li>
-                        <div class="media">
-                            <div class="media-left align-self-center">
-                                <img class="rounded-circle" src="" alt="Book cover image">
-                            </div>
-                            <div class="media-body">
-                                <h4>Book title</h4>
-                                <p>Book description: Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation</p>
-                            </div>
-                            <div class="media-right align-self-center">
-                                <a href="#">Remove</a>
-                            </div>
-                        </div>
-                    </li>
-
-
-
                 </ul>
             </div>
         </div>
