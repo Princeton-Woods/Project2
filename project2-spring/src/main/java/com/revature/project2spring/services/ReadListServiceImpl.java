@@ -32,8 +32,8 @@ public class ReadListServiceImpl implements ReadListService{
 	}
 
 	@Override
-	public List<ReadList> getAllReadListByUserId(long userId) {
-		return null;
+	public List<ReadList> getAllReadListByUserUserId(long userId) {
+		return repository.findAllByUserUserId(userId);
 	}
 
 }

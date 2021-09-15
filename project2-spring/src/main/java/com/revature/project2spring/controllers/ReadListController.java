@@ -34,4 +34,9 @@ public class ReadListController {
 		return service.deleteReadList(readListId);
 	}
 	
+	@GetMapping("/list/{id}")
+	public List<ReadList> getAllReadListsByUserId(@PathVariable("id") long userId)	{
+		return service.getAllReadListByUserUserId(userId);
+	}
+	
 }

@@ -11,5 +11,5 @@ public interface ReadListService {
 	ReadList saveReadList(ReadList list);
 	List<ReadList> getAllReadList();
 	ReadList deleteReadList(long readListId);
-	List<ReadList> getAllReadListByUserId(long userId);
+	List<ReadList> getAllReadListByUserUserId(long userId);
 }

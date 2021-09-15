@@ -26,12 +26,12 @@ class Project2SpringApplicationTests {
 //	@Test
 //	public void testAddUser() {
 //		User user = User.builder()
-//				.email("t@gmail.com")
-//				.firstName("Test")
-//				.lastName("User")
-//				.username("Tester123")
-//				.password("password")
-//				.mobile("999-999-9999")
+//				.email("p@gmail.com")
+//				.firstName("Paul")
+//				.lastName("Smith")
+//				.username("psmith123")
+//				.password("pass123")
+//				.mobile("888-888-8888")
 //				.build();
 //		userService.saveUser(user);
 //	}
@@ -60,16 +60,16 @@ class Project2SpringApplicationTests {
 //		bookRepo.save(book2);
 //	}
 	
-//	@Test
-//	public void testAddReadListEntry()	{
-//		User user = userService.getUserById(1L);
-//		Book book = bookRepo.getById(9781841499789L);
-//		
-//		ReadList list = ReadList.builder()
-//				.user(user)
-//				.book(book)
-//				.build();
-//		rlRepo.save(list);
-//	}
+	@Test
+	public void testAddReadListEntry()	{
+		User user = userService.getUserById(3L);
+		Book book = bookRepo.getById(9780751548525L);
+		
+		ReadList list = ReadList.builder()
+				.user(user)
+				.book(book)
+				.build();
+		rlRepo.save(list);
+	}
 
 }
