@@ -62,6 +62,4 @@ public class UserServiceImpl implements UserService{
 		User user = repository.findByUsernameAndPassword(username, password);
 		return user;
 	}
-
-
 }

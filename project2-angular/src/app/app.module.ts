@@ -15,6 +15,8 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { LogoutComponent } from './components/logout/logout.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReadlistComponent } from './components/readlist/readlist.component';
 
 import { ProductsComponent } from './components/products/products.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
@@ -32,6 +34,7 @@ import { SortDirective } from './directive/sort.directive';
     LoginComponent,
     RegisterComponent,
     LogoutComponent,
+    ReadlistComponent,
     ProductsComponent,
     PageNotFoundComponent,
     BookDetailComponent,
@@ -41,6 +44,7 @@ import { SortDirective } from './directive/sort.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    ReactiveFormsModule,
     HttpClientModule,
     FormsModule
   ],

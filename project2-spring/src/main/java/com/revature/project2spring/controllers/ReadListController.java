@@ -3,6 +3,7 @@ package com.revature.project2spring.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,19 +20,27 @@ public class ReadListController {
 	@Autowired
 	ReadListService service;
 	
-	@PostMapping("/list")
+	@PostMapping("/readlist")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public ReadList saveReadList(@RequestBody ReadList list) {
 		return service.saveReadList(list);
 	}
 	
-	@GetMapping("/list")
+	@GetMapping("/readlist")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public List<ReadList> getAllReadLists(){
 		return service.getAllReadList();
 	}
 	
-	@DeleteMapping("/list/{id}")
+	@GetMapping("/readlist/{userId}")
+	@CrossOrigin(origins = "http://localhost:4200")
+	public List<ReadList> getAllReadListsByUserId(@PathVariable("userId") int userId){
+		return service.getAllReadListByUserId(userId);
+	}
+	
+	@DeleteMapping("/readlist/{id}")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public ReadList deleteReadListById(@PathVariable("id") long readListId)	{
 		return service.deleteReadList(readListId);
 	}
-	
 }

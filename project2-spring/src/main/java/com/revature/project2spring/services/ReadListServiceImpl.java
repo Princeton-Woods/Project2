@@ -1,5 +1,6 @@
 package com.revature.project2spring.services;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.revature.project2spring.entities.ReadList;
 import com.revature.project2spring.entities.User;
 import com.revature.project2spring.repositories.ReadListRepository;
+
 @Service
 public class ReadListServiceImpl implements ReadListService{
 
@@ -33,7 +35,6 @@ public class ReadListServiceImpl implements ReadListService{
 
 	@Override
 	public List<ReadList> getAllReadListByUserId(long userId) {
-		return null;
+		return repository.findByUserUserId(userId);
 	}
-
 }

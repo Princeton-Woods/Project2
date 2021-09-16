@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  
   public userExists(username: string, password: string): boolean {
     this.userService.userExists(username, password).subscribe(
       (response: boolean) => {
@@ -72,6 +72,4 @@ export class LoginComponent implements OnInit {
     }, 500);
 
   }
-  
-
 }
