@@ -1,6 +1,7 @@
 package com.revature.project2spring.services;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,6 +46,22 @@ public class UserServiceImpl implements UserService{
 		userDB.setPassword(user.getPassword());
 		return repository.save(userDB);
 	}
-	
-	
+
+	@Override
+	public Boolean userExists(String username, String password) {
+		User userDB = repository.findByUsernameAndPassword(username, password);
+		if (userDB != null){
+			return true;
+		}
+		else
+			return false;
+	}
+
+	@Override
+	public User getUserByUsernameAndPassword(String username, String password) {
+		User user = repository.findByUsernameAndPassword(username, password);
+		return user;
+	}
+
+
 }
