@@ -9,6 +9,23 @@ import { environment } from 'src/environments/environment';
 })
 export class UserService {
   private apiServerUrl = environment.apiBaseUrl;
+  private currentUser:User = {
+    userId: 0,
+    firstName : "",
+    lastName: "",
+    mobile: "",
+    email: "",
+    username: "",
+    password: ""
+  };
+
+  public setCurrentUser(user: User) {
+    this.currentUser = user;
+  }
+
+  public getCurrentUser(): User {
+    return this.currentUser;
+  }
 
   constructor(private http: HttpClient) { }
 
@@ -27,4 +44,9 @@ export class UserService {
   public userExists(username: string, password: string): Observable<boolean> {
     return this.http.get<boolean>(`${this.apiServerUrl}/user/${username}/${password}`)
   }
+
+  public getCurrentUserByUsernameAndPassword(username: string, password: string): Observable<User> {
+    return this.http.get<User>(`${this.apiServerUrl}/user/user/${username}/${password}`)
+  }
+
 }

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/user/user.service';
+import { User } from 'src/app/user/user';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -8,8 +10,27 @@ import { UserService } from 'src/app/user/user.service';
 })
 export class LoginComponent implements OnInit {
   public result = false;
+  public user:User = {
+    userId: 0,
+    firstName : "",
+    lastName: "",
+    mobile: "",
+    email: "",
+    username: "",
+    password: ""
+  };
 
-  constructor(private userService: UserService) { }
+  public user2:User = {
+    userId: 0,
+    firstName : "",
+    lastName: "",
+    mobile: "",
+    email: "",
+    username: "",
+    password: ""
+  };
+
+  constructor(private userService: UserService, private route:Router) { }
 
   ngOnInit(): void {
   }
@@ -23,6 +44,15 @@ export class LoginComponent implements OnInit {
     return this.result;
   }
 
+  public currentUser(username: string, password: string): User {
+    this.userService.getCurrentUserByUsernameAndPassword(username, password).subscribe(
+      (response: User) => {
+        this.user = response;
+      }
+    )
+    return this.user;
+  }
+
   onClick(username: string, password: string) {
     
     this.result = this.userExists(username, password)
@@ -31,8 +61,14 @@ export class LoginComponent implements OnInit {
       if (this.result == false){
         alert("Invalid Login")
       }
-      else
+      else {
         alert("Successfull Login")
+        this.user = this.currentUser(username, password)
+        this.userService.setCurrentUser(this.user);
+        setTimeout(() => {
+          this.route.navigate(['/products']);
+        }, 500)
+      }
     }, 500);
 
   }

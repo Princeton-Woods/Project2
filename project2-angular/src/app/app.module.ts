@@ -21,8 +21,6 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
 import { BookDetailComponent } from './components/book-detail/book-detail.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { SortDirective } from './directive/sort.directive';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
