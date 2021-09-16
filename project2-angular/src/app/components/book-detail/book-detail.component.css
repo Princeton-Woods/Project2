@@ -1,0 +1,12 @@
+.body {
+    background-color: rgba(0, 0, 0, 0.61);
+    /* background: black; */
+}
+.bigger-text {
+    font-size: 64px;
+}
+
+/* container-bg {
+    background-color: rgba(0, 0, 0, 0.61);
+    background: black;
+} */
