@@ -95,10 +95,11 @@
     padding-left: 14px;
 }
 
-.btn-default {
-    background: #6B456A;
-    color: #fff;
-    border-radius: 30px;
-    border: none;
-    font-size: 16px;
+.linebreak {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    max-width: 40%;
+    height: 30px;
+    display: block;
 }

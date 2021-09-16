@@ -13,24 +13,21 @@ export class ReadlistService {
         READLIST: "readlist"
     }
 
-    // this should be obtained from login component/a data.service.ts file
-    private userId = "/1" // placeholder
     constructor(private http: HttpClient) { }
 
     getReadlist(): Observable<IReadlist[]> {
         return this.http.get<IReadlist[]>(this.BASEURL + this.ENDPOINTS.READLIST)
     }
 
-    getReadlistById(): Observable<IReadlist[]> {
-        return this.http.get<IReadlist[]>(this.BASEURL + this.ENDPOINTS.READLIST + this.userId)
+    getReadlistById(userId: number): Observable<IReadlist[]> {
+        return this.http.get<IReadlist[]>(this.BASEURL + this.ENDPOINTS.READLIST + "/" + userId)
     }
 
     createReadlist(data: IReadlist): Observable<IReadlist> {
         return this.http.post<IReadlist>(this.BASEURL + this.ENDPOINTS.READLIST, data)
     }
 
-    deleteReadlistEntry(id: number) { //Observable<IReadlist>
+    deleteReadlistEntry(id: number) {
         return this.http.delete(this.BASEURL + this.ENDPOINTS.READLIST + "/" + id)
-            // .subscribe(() => console.log("Deleted?"))
     }
 }
