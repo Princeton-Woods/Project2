@@ -24,7 +24,7 @@ public class UserController {
 		return service.getAllUsers();
 	}
 	
-	@PostMapping("/user")
+	@PostMapping("/user/add")
 	public User saveUser(@RequestBody User user)	{
 		return service.saveUser(user);
 	}
@@ -34,8 +34,18 @@ public class UserController {
 		return service.getUserById(userId);
 	}
 	
-	@PutMapping("user/{id}")
+	@PutMapping("/user/update/{id}")
 	public User updateUser(@PathVariable("id") long userId, @RequestBody User user)	{
 		return service.updateUser(userId, user);
+	}
+
+	@GetMapping("/user/{username}/{password}")
+	public Boolean userExists(@PathVariable("username") String username, @PathVariable("password") String password) {
+		return service.userExists(username, password);
+	}
+
+	@GetMapping("/user/user/{username}/{password}")
+	public User getUserByUsernameAndPassword(@PathVariable("username") String username, @PathVariable("password") String password) {
+		return service.getUserByUsernameAndPassword(username, password);
 	}
 }

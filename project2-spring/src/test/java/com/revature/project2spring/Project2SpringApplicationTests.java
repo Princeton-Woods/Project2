@@ -23,18 +23,18 @@ class Project2SpringApplicationTests {
 	@Autowired
 	ReadListRepository rlRepo;
 
-	@Test
-	public void testAddUser() {
-		User user = User.builder()
-				.email("t@gmail.com")
-				.firstName("Test")
-				.lastName("User")
-				.username("Tester123")
-				.password("password")
-				.mobile("999-999-9999")
-				.build();
-		userService.saveUser(user);
-	}
+//	@Test
+//	public void testAddUser() {
+//		User user = User.builder()
+//				.email("t@gmail.com")
+//				.firstName("Test")
+//				.lastName("User")
+//				.username("Tester123")
+//				.password("password")
+//				.mobile("999-999-9999")
+//				.build();
+//		userService.saveUser(user);
+//	}
 
 //	@Test
 //	public void testAddBooks()	{
