@@ -43,5 +43,4 @@ public class ReadListController {
 	public ReadList deleteReadListById(@PathVariable("id") long readListId)	{
 		return service.deleteReadList(readListId);
 	}
-	
 }

@@ -12,4 +12,6 @@ public interface UserService {
 	List<User> getAllUsers();
 	User getUserById(long userId);
 	User updateUser(long userId, User user);
+	Boolean userExists(String username, String password);
+	User getUserByUsernameAndPassword(String username, String password);
 }

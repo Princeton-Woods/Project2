@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import com.revature.project2spring.entities.ReadList;
 import com.revature.project2spring.entities.User;
 import com.revature.project2spring.repositories.ReadListRepository;
+
 @Service
 public class ReadListServiceImpl implements ReadListService{
 
@@ -36,5 +37,4 @@ public class ReadListServiceImpl implements ReadListService{
 	public List<ReadList> getAllReadListByUserId(long userId) {
 		return repository.findByUserUserId(userId);
 	}
-
 }
