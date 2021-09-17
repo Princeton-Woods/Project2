@@ -1,10 +1,14 @@
+import { HttpClient } from '@angular/common/http';
 import { UrlResolver } from '@angular/compiler';
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BooksService {
+  private apiServerUrl = environment.apiBaseUrl;
   books = [
     
     {
@@ -333,19 +337,23 @@ export class BooksService {
     }
     ]
 
-  constructor() { }
+  constructor(private http: HttpClient) { }
 
   getBooks() {
     return this.books;
   }
 
   getBookByISBN(ISBN: any) {
+    let book;
     for (let i = 0; i < this.books.length; i++) {
-      var book = this.books[i];
-      if (book.ISBN == ISBN) {
-        return book;
+      if (this.books[i].ISBN == ISBN) {
+        book = this.books[i];
       }
     }
-    return this.books;
+    return book;
   }
+
+  getAllBooks(): Observable<any[]> {
+    return this.http.get<any[]>(`${this.apiServerUrl}/books`)
+  } 
 }

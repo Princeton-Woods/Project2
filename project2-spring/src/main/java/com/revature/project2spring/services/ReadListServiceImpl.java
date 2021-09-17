@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.revature.project2spring.entities.ReadList;
 import com.revature.project2spring.entities.User;
+import com.revature.project2spring.repositories.BookRepository;
 import com.revature.project2spring.repositories.ReadListRepository;
 
 @Service

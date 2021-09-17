@@ -1,17 +1,16 @@
-
 <div class="body">
-    
-    <app-navbar></app-navbar>
-<br>
-<div class="container-fluid">
-    
-    <div class="row">
 
-        <div class="col-2">
-            <br>
-            <br>
-            <br>
-            <!-- <aside>
+    <app-navbar></app-navbar>
+    <br>
+    <div class="container-fluid">
+
+        <div class="row">
+
+            <div class="col-2">
+                <br>
+                <br>
+                <br>
+                <!-- <aside>
                 <div class="alert alert-secondary" role="alert">
                     <h4 class="alert-heading">Sort by:</h4>
                     <select class="custom-select">
@@ -23,48 +22,48 @@
                   </div>
             </aside> -->
 
-        </div>
+            </div>
 
-        <div class="col-8">
+            <div class="col-8">
 
-            <table class="table table-dark table-borderless tablesorter" id="booksTable">
+                <table class="table table-dark table-borderless tablesorter" id="booksTable">
 
-                <thead class="thead-dart">
-                    <tr>
-                        <th><h1 class="text-white font-weight-bold bigger-text">Books</h1>
-                        </th>
-                        <th scope="col" [appSort]="books" data-order="desc" data-name="title">Title (click to sort)</th>
-                        <th scope="col" [appSort]="books" data-order="desc" data-name="author">Author (click to sort)</th>
-                        <th scope="col" [appSort]="books" data-order="desc" data-name="isbn">ISBN</th>
-                        <th scope="col" [appSort]="books" data-order="desc" data-name="price">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr *ngFor="let book of books">
-                        <td><img src="{{ book.image }}" class="img-fluid img-thumbnail" alt=""></td>
-                        <td class="col-title" id="{{ book.title }}">{{ book.title }}</td>
-                        <td class="col-author" id="{{ book.author }}">{{ book.author }}</td>
-                        <td class="col-isbn" id="{{ book.ISBN }}">{{ book.ISBN }}</td>
-        
-                        <td class="col-price">{{ book.price.displayValue | currency:'EUR' }} | {{ book.price.displayValue * 1.18 | currency:'USD' }}</td>
-                        <td>
-                            <button class="btn btn-info" (click)="onButtonClick(book)">Learn More</button>
-                          
-                        </td>
-                        <td>
-                            <button class="btn btn-primary">Add to Library</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            
-        </div>
-        <!-- <div class="col-3">
+                    <thead class="thead-dart">
+                        <tr>
+                            <th>
+                                <h1 class="text-white font-weight-bold bigger-text">Books</h1>
+                            </th>
+                            <th scope="col" [appSort]="books" data-order="desc" data-name="title">Title (click to sort)</th>
+                            <th scope="col" [appSort]="books" data-order="desc" data-name="author">Author (click to sort)</th>
+                            <th scope="col" [appSort]="books" data-order="desc" data-name="isbn">ISBN</th>
+                            <th scope="col" [appSort]="books" data-order="desc" data-name="price">Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let book of allBooks">
+                            <td><img src="{{ book.image }}" class="img-fluid img-thumbnail" alt=""></td>
+                            <td class="col-title" id="{{ book.title }}">{{ book.title }}</td>
+                            <td class="col-author" id="{{ book.author }}">{{ book.author }}</td>
+                            <td class="col-isbn" id="{{ book.isbn }}">{{ book.isbn }}</td>
+
+                            <td class="col-price">${{ book.price }}</td>
+                            <td>
+                                <button class="btn btn-info" (click)="viewBook(book)">Learn More</button>
+
+                            </td>
+                            <td>
+                                <button class="btn btn-primary" (click)="addBook(book)">Add to Library</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+            <!-- <div class="col-3">
             <br>
         </div> -->
-       
+
+        </div>
     </div>
-</div>
 
 </div>
-

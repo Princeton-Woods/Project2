@@ -1,5 +1,5 @@
 export interface IReadlist {
-    readListId: number;
+    readListId?: number;
     user: any;
     book: any;
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { BooksService } from 'src/app/services/books.service';
-import { DataService } from 'src/app/services/data.service';
+import { ReadlistService } from 'src/app/services/readlist.service';
 
 
 @Component({
@@ -10,7 +10,7 @@ import { DataService } from 'src/app/services/data.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  public allBooks: any;
   public isbn: any;
   public title: any;
   public author: any;
@@ -19,18 +19,21 @@ export class ProductsComponent implements OnInit {
   public books: any;
 
 
-  constructor(private bookService: BooksService, private router: Router) { 
+  constructor(private bookService: BooksService, private readlistService:
+    ReadlistService, private router: Router) { }
 
-
-
-  }
-
-    onButtonClick(book: any){
+  viewBook(book: any) {
     this.router.navigate(['/products', book.ISBN])
   }
 
   ngOnInit(): void {
-    this.books = this.bookService.getBooks() 
+    this.books = this.bookService.getBooks();
+    this.bookService.getAllBooks().subscribe((data) =>
+      this.allBooks = data);
+  }
+
+  public addBook(book: any) {
+    this.readlistService.addReadlistEntry(book);
   }
 
 }

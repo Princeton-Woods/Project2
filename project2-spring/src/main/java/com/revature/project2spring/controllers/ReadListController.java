@@ -20,10 +20,11 @@ public class ReadListController {
 	@Autowired
 	ReadListService service;
 	
-	@PostMapping("/readlist")
+	@PostMapping("/readlist/add")
 	@CrossOrigin(origins = "http://localhost:4200")
-	public ReadList saveReadList(@RequestBody ReadList list) {
-		return service.saveReadList(list);
+	public ReadList saveReadList(@RequestBody ReadList listEntry) {
+		System.out.println("IN BACKEND ******************************");
+		return service.saveReadList(listEntry);
 	}
 	
 	@GetMapping("/readlist")
