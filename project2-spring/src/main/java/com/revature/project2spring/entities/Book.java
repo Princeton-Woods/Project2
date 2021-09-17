@@ -1,5 +1,6 @@
 package com.revature.project2spring.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -18,6 +19,7 @@ public class Book {
 	private Long isbn;
 	private String title;
 	private String author;
+	@Column(length = 3000)
 	private String summary;
 	private String image;
 	private double price;
