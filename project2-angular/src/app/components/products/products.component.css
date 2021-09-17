@@ -60,10 +60,6 @@ h3 {
 
 .scrollable {
     overflow-y: auto;
+    overflow-x: hidden;
     max-height: 750px;
-}
-
-img {
-    width: 200px;
-    height: 300px;
 }
