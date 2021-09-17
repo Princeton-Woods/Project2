@@ -36,3 +36,7 @@ h1 {
     color: white;
     background-color: black;
 }
+
+.btn:hover {
+    background-color: gray;
+}

@@ -1,5 +1,6 @@
 package com.revature.project2spring.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -23,6 +24,7 @@ public class User {
 	private String lastName;
 	private String mobile;
 	private String email;
+	@Column(unique = true)
 	private String username;
 	private String password;
 }

@@ -8,5 +8,6 @@ import com.revature.project2spring.entities.Book;
 
 @Service
 public interface BookService {
-	List<Book> getBooks();
+	List<Book> getAllBook();
+	List<Book> getAllBookByBookTitleContaining(String title);
 }

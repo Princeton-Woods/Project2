@@ -9,14 +9,18 @@ import com.revature.project2spring.entities.Book;
 import com.revature.project2spring.repositories.BookRepository;
 
 @Service
-public class BookServiceImpl implements BookService {
-	
+public class BookServiceImpl implements BookService{
 	@Autowired
 	private BookRepository repository;
 	
 	@Override
-	public List<Book> getBooks() {
+	public List<Book> getAllBook() {
 		return repository.findAll();
 	}
 
+	@Override
+	public List<Book> getAllBookByBookTitleContaining(String title) {
+		return repository.findAllBookByTitleContaining(title);
+	}
+	
 }

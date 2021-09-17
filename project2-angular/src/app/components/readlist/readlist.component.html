@@ -2,11 +2,11 @@
     <app-navbar></app-navbar>
     <section class="row-section">
         <div class="container">
-            <div class="row">
-                <h2 class="text-center" *ngIf="userLoggedIn"><span>Reading List</span> For {{ currentUser.firstName }} {{ currentUser.lastName }}</h2>
-                <h2 class="text-center" *ngIf="!userLoggedIn"><span>Reading List</span>For Guest</h2>
+            <div class="row" style="text-shadow: 2px 2px #000000;">
+                <h2 class="text-center text-light" *ngIf="userLoggedIn"><span>Reading Listing</span> For {{ currentUser.firstName }} {{ currentUser.lastName }}</h2>
+                <h2 class="text-center text-light" *ngIf="!userLoggedIn"><span>Reading Listing</span>For Guest</h2>
             </div>
-            <div class="col-md-10 offset-md-1 row-block scrollable">
+            <div class="col-md-10 offset-md-1 row-block">
                 <ul id="sortable">
                     <li *ngFor="let readlist of readlists">
                         <div class="media" *ngIf="userLoggedIn && userHasReadlist">
@@ -25,9 +25,9 @@
                     </li>
                     <div class="media" *ngIf="userLoggedIn && !userHasReadlist">
                         <div class="media-body" style="text-align: center;">
-                            <h4>You can add books to your readlist from the products page!</h4>
+                            <h4>You can add books to your readlist from the store page!</h4>
                             <img class="linebreak" src="/assets/img/linebreakImg.png">
-                            <a href="/products">Books page</a>
+                            <a href="/products">Store page</a>
                         </div>
                     </div>
                     <div class="media" *ngIf="!userLoggedIn">

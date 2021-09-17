@@ -19,8 +19,8 @@ public class Book {
 	private Long isbn;
 	private String title;
 	private String author;
-	
-	@Column(columnDefinition="TEXT")
+
+	@Column(length = 3000)
 	private String summary;
 	private String image;
 	private double price;
