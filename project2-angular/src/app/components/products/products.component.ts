@@ -23,7 +23,7 @@ export class ProductsComponent implements OnInit {
     ReadlistService, private router: Router) { }
 
   viewBook(book: any) {
-    this.router.navigate(['/products', book.ISBN])
+    this.router.navigate(['/products', book.isbn])
   }
 
   ngOnInit(): void {
