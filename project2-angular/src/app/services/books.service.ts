@@ -354,6 +354,6 @@ export class BooksService {
   }
 
   getAllBooks(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.apiServerUrl}/books`)
+    return this.http.get<any[]>(`${this.apiServerUrl}/book`)
   } 
 }
