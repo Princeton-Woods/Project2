@@ -21,21 +21,38 @@ export class BookDetailComponent implements OnInit {
   public book: any;
   
 
+  
+
   constructor(private bookService: BooksService, private route: ActivatedRoute, private readlistService: ReadlistService) { 
+
     let isbn = this.route.snapshot.paramMap.get('ISBN');
 
-    let bookString = JSON.stringify(this.bookService.getBookByISBN(isbn));
-    let bookJSON = JSON.parse(bookString);
+    this.bookService.getAllBooks().subscribe((data) => {
+      this.allBooks = data;
+      for (let i = 0; i < this.allBooks.length; i++) {
+        
 
-    this.bookISBN = isbn; 
-    this.book = bookJSON;
-    this.bookTitle = bookJSON.title;
+        if (this.allBooks[i].isbn == isbn) {
+          
+          this.currentBook = this.allBooks[i];
+          console.log(this.allBooks[i].isbn);
+          console.log(this.currentBook);
+        }
+      }
+    });
 
-    console.log(this.book.title);
+
+
+    // this.bookISBN = isbn; 
+    // this.book = bookJSON;
+    // this.bookTitle = bookJSON.title;
+
+    // console.log(this.currentBook.isbn);
 
   }
 
   ngOnInit(): void {
+
   }
 
   public addBook(book: any) {
