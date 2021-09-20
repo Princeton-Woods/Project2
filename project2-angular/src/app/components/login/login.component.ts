@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
     this.userService.getCurrentUserByUsernameAndPassword(username, password).subscribe(
       (response: User) => {
         this.user = response;
+        console.log(response)
       }
     )
     return this.user;
@@ -63,8 +64,12 @@ export class LoginComponent implements OnInit {
       }
       else {
         alert("Successfull Login")
-        this.user = this.currentUser(username, password)
-        this.userService.setCurrentUser(this.user);
+        this.userService.getCurrentUserByUsernameAndPassword(username, password).subscribe(
+          (response: User) => {
+            this.user = response;
+            this.userService.setCurrentUser(this.user);
+          }
+        )
         setTimeout(() => {
           this.route.navigate(['/products']);
         }, 500)
