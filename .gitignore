@@ -1,1 +1,17 @@
 /.metadata/
+application.properties
+angular.json
+.idea
+*.iws
+*.iml
+*.ipr
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
