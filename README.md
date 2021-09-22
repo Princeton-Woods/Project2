@@ -25,7 +25,7 @@ To-do list:
 
 ## Getting Started
    
-clone the repository via git clone 
+clone the repository via git clone https://github.com/
 (include all environment setup steps)
 
 > Be sure to include BOTH Windows and Unix command  
