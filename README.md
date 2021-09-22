@@ -1,29 +1,31 @@
-# PROJECT NAME
+# Curiosity Books Digital Storefront
 
 ## Project Description
 
-Here goes your awesome project description!
+A simple digital storefront in which users can create an account, log in, view a list of books, and add and remove the books from a "reading list" specific to each user
 
 ## Technologies Used
 
-* Tech 1 - version 1.0
-* Tech 2 - version 2.0
-* Tech 3 - version 3.0
+* Angular 5
+* Bootstrap 4.6
+* Spring
+* Spring Boot
+* MySql
 
 ## Features
 
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* Users can create an account and log in
+* Users can add books to a read list and remove them when logged in
+* Users can navigate between pages and can view individual book details via the store page
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Log out
+* implementing actual shopping funcionality, add to cart, etc.
 
 ## Getting Started
    
-(include git clone command)
+clone the repository via git clone 
 (include all environment setup steps)
 
 > Be sure to include BOTH Windows and Unix command  
