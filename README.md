@@ -25,7 +25,7 @@ To-do list:
 
 ## Getting Started
    
-clone the repository via git clone https://github.com/
+clone the repository via git clone https://github.com/AntyZhu1/project2.git
 (include all environment setup steps)
 
 > Be sure to include BOTH Windows and Unix command  
@@ -36,11 +36,11 @@ clone the repository via git clone https://github.com/
 
 ## Usage
 
-> Here, you instruct other people on how to use your project after they’ve installed it. This would also be a good place to include screenshots of your project in action.
+> Once installed, to run the program first create an sql database called 'project2'. Afterwards, run the Project2SpringApplication to create the tables, and the Project2SpringApplicationTests to populate the books table. Keep the Project2SpringApplication running while starting the angular application with a terminal. Navigate to localhost:4200 and use the loaded single page application. If there are any issues populating the books list, check the applications.property file and if the server.port is not set to 9031 change the server.port.
 
 ## Contributors
 
-> Here list the people who have contributed to this project. (ignore this section, if its a solo project)
+* Anthony Zhu: Frontend
 
 ## License
 
